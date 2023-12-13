@@ -1,7 +1,7 @@
 # sparkify_song_lib_analytics
 Sparkify Cloud Migration &amp; Data Warehouse Project
 
-![Local Image](Dwh_Schema.png)
+![Local Image](DB_Schema.png)
 
 TASK
 
