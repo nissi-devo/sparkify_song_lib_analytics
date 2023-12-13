@@ -109,27 +109,47 @@ Potential Business Questions and Analytics Queries
 <br>
 <br>
 Find Most Popular Songs <br>
-SELECT ds."song_id", ds."title", da."artist_name", COUNT(fs."songplay_id") AS play_count
-FROM fact_songplay fs
-JOIN dim_songs ds ON fs."song_id" = ds."song_id"
-JOIN dim_artists da ON ds."artist_id" = da."artist_id"
-GROUP BY ds."song_id", ds."title", da."artist_name"
-ORDER BY play_count DESC
+<div class="code-container">
+    <pre><code id="code-to-copy" class="language-python">
+    SELECT ds."song_id", ds."title", da."artist_name", COUNT(fs."songplay_id") AS play_count
+    FROM fact_songplay fs
+    JOIN dim_songs ds ON fs."song_id" = ds."song_id"
+    JOIN dim_artists da ON ds."artist_id" = da."artist_id"
+    GROUP BY ds."song_id", ds."title", da."artist_name"
+    ORDER BY play_count DESC
+    </code></pre>
+    <button class="copy-button" data-clipboard-target="#code-to-copy">Copy</button>
+</div>
 <br>
 <br>
 Identify Users' Listening Patterns <br>
-SELECT du."user_id", du."firstName", du."lastName", COUNT(fs."songplay_id") AS play_count
-FROM dim_users du
-JOIN fact_songplay fs ON du."user_id" = fs."user_id"
-GROUP BY du."user_id", du."firstName", du."lastName"
-ORDER BY play_count DESC
+<div class="code-container">
+    <pre><code id="code-to-copy" class="language-python">
+    SELECT du."user_id", du."firstName", du."lastName", COUNT(fs."songplay_id") AS play_count
+    FROM dim_users du
+    JOIN fact_songplay fs ON du."user_id" = fs."user_id"
+    GROUP BY du."user_id", du."firstName", du."lastName"
+    ORDER BY play_count DESC
+    </code></pre>
+    <button class="copy-button" data-clipboard-target="#code-to-copy">Copy</button>
+</div>
 <br>
 <br>
 Identify Geographic Listening Patterns<br>
-SELECT da."artist_location", COUNT(fs."songplay_id") AS play_count
-FROM dim_artists da
-JOIN dim_songs ds ON da."artist_id" = ds."artist_id"
-JOIN fact_songplay fs ON ds."song_id" = fs."song_id"
-GROUP BY da."artist_location"
-ORDER BY play_count DESC
+<div class="code-container">
+    <pre><code id="code-to-copy" class="language-python">
+    SELECT da."artist_location", COUNT(fs."songplay_id") AS play_count
+    FROM dim_artists da
+    JOIN dim_songs ds ON da."artist_id" = ds."artist_id"
+    JOIN fact_songplay fs ON ds."song_id" = fs."song_id"
+    GROUP BY da."artist_location"
+    ORDER BY play_count DESC
+    </code></pre>
+    <button class="copy-button" data-clipboard-target="#code-to-copy">Copy</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/clipboard.js/1.7.1/clipboard.min.js"></script>
+<script>
+    new ClipboardJS('.copy-button');
+</script>
 
