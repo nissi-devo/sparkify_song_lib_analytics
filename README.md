@@ -10,6 +10,7 @@ Sparkify, a burgeoning music streaming startup, has witnessed significant expans
 As the appointed data engineer for Sparkify, I have constructed a business-oriented Data Model and an Extract, Transform, Load (ETL) pipeline. This pipeline loads data from S3 buckets into a couple of staging tables in Amazon Redshift. The data is then loaded into defined Fact and Dimension tables after undergoing some transformations. This setup is aimed at providing the analytics team at Sparkify with a robust framework to extract valuable insights regarding the user beaviour and engaement on the platform. 
 
 DATAWAREHOUSE DESIGN 
+
 In the process of designing our data warehouse, we prioritize efficient data distribution and maintain consistency in our dimensional and fact tables.
 
 I join songs with song play events based on the song name as the best matching field.
