@@ -118,7 +118,6 @@ Find Most Popular Songs <br>
     GROUP BY ds."song_id", ds."title", da."artist_name"
     ORDER BY play_count DESC
     </code></pre>
-    <button class="copy-button" data-clipboard-target="#code-to-copy">Copy</button>
 </div>
 <br>
 <br>
@@ -131,7 +130,6 @@ Identify Users' Listening Patterns <br>
     GROUP BY du."user_id", du."firstName", du."lastName"
     ORDER BY play_count DESC
     </code></pre>
-    <button class="copy-button" data-clipboard-target="#code-to-copy">Copy</button>
 </div>
 <br>
 <br>
@@ -145,11 +143,7 @@ Identify Geographic Listening Patterns<br>
     GROUP BY da."artist_location"
     ORDER BY play_count DESC
     </code></pre>
-    <button class="copy-button" data-clipboard-target="#code-to-copy">Copy</button>
 </div>
 
-<script src="https://cdn.jsdelivr.net/clipboard.js/1.7.1/clipboard.min.js"></script>
-<script>
-    new ClipboardJS('.copy-button');
-</script>
+
 
