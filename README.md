@@ -9,6 +9,54 @@ Sparkify, a burgeoning music streaming startup, has witnessed significant expans
 
 As the appointed data engineer for Sparkify, I have constructed a business-oriented Data Model and an Extract, Transform, Load (ETL) pipeline. This pipeline loads data from S3 buckets into a couple of staging tables in Amazon Redshift. The data is then loaded into defined Fact and Dimension tables after undergoing some transformations. This setup is aimed at providing the analytics team at Sparkify with a robust framework to extract valuable insights regarding the user beaviour and engaement on the platform. 
 
+Here is what data from the song library and events logs looks like:
+
+<i>song-data/A/A/A/TRAAAAV128F421A322.json</i>
+<div class="code-container">
+    <pre><code id="code-to-copy" class="language-python">
+       {
+        'song_id': 'SOQPWCR12A6D4FB2A3',
+         'num_songs': 1,
+         'title': 'A Poor Recipe For Civic Cohesion',
+         'artist_name': 'Western Addiction',
+         'artist_latitude': 37.77916,
+         'year': 2005,
+         'duration': 118.07302,
+         'artist_id': 'AR73AIO1187B9AD57B',
+         'artist_longitude': -122.42005,
+         'artist_location': 'San Francisco, CA'
+        }
+    </code></pre>
+</div>
+
+<i>log_data/2018/11/2018-11-12-events.json</i>
+<div class="code-container">
+    <pre><code id="code-to-copy" class="language-python">
+       {
+        "artist":null,
+        "auth":"Logged In",
+        "firstName":"Celeste",
+        "gender":"F",
+        "itemInSession":0,
+        "lastName":"Williams",
+        "length":null,
+        "level":"free",
+        "location":"Klamath Falls,OR",
+        "method":"GET",
+        "page":"Home",
+        "registration":1541077528796.0,
+        "sessionId":438,
+        "song":null,
+        "status":200,
+        "ts":1541990217796,
+        "userAgent":"\\"Mozilla\\/5.0 (Windows NT 6.1; WOW64) AppleWebKit\\/537.36 (KHTML, like Gecko) 
+         Chrome\\/37.0.2062.103Safari\\/537.36\\"",
+        "userId":"53"
+    }
+    </code></pre>
+</div>
+
+
 DATAWAREHOUSE DESIGN 
 
 In the process of designing our data warehouse, we prioritize efficient data distribution and maintain consistency in our dimensional and fact tables.
