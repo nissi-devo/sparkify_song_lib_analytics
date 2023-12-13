@@ -33,8 +33,8 @@ Distribution style: ALL, as this small table is frequently used in joins, and th
 DimensionSongs:
 Primary key: Unique song IDs.
 I filter for null song IDs during insertion to maintain non-null constraints.
-Song ID is set as a distribution key to optimize query performance for song-related information. This choice enhances filtering operations by reducing the data scanned across nodes.
-I select song_id (which is unique) as the dist key to ensure the load is distributed evenly across partitions, thus improving query performance. 
+'song_id' is set as a distribution key to optimize query performance for song-related information. This choice enhances filtering operations by reducing the data scanned across nodes.
+'song_id' (which is unique) as the dist key, ensures the load is distributed evenly across partitions, thus improving query performance. 
 I leave the sorting strategy to redhsift which does this based on the frequency of certain queries.
 Avoid using ALL distribution due to the large size of the table as this would result in high storage costs.
 
