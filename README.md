@@ -106,24 +106,26 @@ Query Optimization:
 I test and optimize queries for performance based on the distribution and structure of the data.
 
 Potential Business Questions and Analytics Queries
-- Find Most Popular Songs <br>
-
+<br>
+<br>
+Find Most Popular Songs <br>
 SELECT ds."song_id", ds."title", da."artist_name", COUNT(fs."songplay_id") AS play_count
 FROM fact_songplay fs
 JOIN dim_songs ds ON fs."song_id" = ds."song_id"
 JOIN dim_artists da ON ds."artist_id" = da."artist_id"
 GROUP BY ds."song_id", ds."title", da."artist_name"
 ORDER BY play_count DESC
-
 <br>
-- Identify Users' Listening Patterns <br>
+<br>
+Identify Users' Listening Patterns <br>
 SELECT du."user_id", du."firstName", du."lastName", COUNT(fs."songplay_id") AS play_count
 FROM dim_users du
 JOIN fact_songplay fs ON du."user_id" = fs."user_id"
 GROUP BY du."user_id", du."firstName", du."lastName"
 ORDER BY play_count DESC
 <br>
-- Identify Geographic Listening Patterns<br>
+<br>
+Identify Geographic Listening Patterns<br>
 SELECT da."artist_location", COUNT(fs."songplay_id") AS play_count
 FROM dim_artists da
 JOIN dim_songs ds ON da."artist_id" = ds."artist_id"
